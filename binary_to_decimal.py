@@ -1,22 +1,22 @@
-# Interpretar Binários em Python
-# Como um binário funciona:
+# Binaries on Python
+# How a binary works:
 # x*64 + x*32 + x*16 + x*8 + x*4 + x*2 + x*1 = Y
 
-# Programa:
-# Perguntar ao usuário qual binário ele deseja decodificar
-# Decodificar pegar a resposta dele
-# A cada digito, colocar em uma array
-# Depois fazer os calculos como dito a cima.
+# Program:
+# Ask to the user which binary they wish to decodify
+# Decodify his choosen binary
+# For each digit, put on an array
+#Then make the calcs as said above
 
 def main():
     binary = []
     decimal = ""
     operations = [64, 32, 16, 8, 4, 2, 1]
-    valido = True
-    inp = input("Digite um binário para ser decodificado (7 números, 1 e 0 apenas): ")
+    valid = True
+    inp = input("Type an binary to be decodified (7 digits, 1 and 0 only): ")
 
     if len(inp) != 7:
-        print("Binário invalido. O tamanho de um binário deve ser de 7 números.")
+        print("Invalid binary. It had to be 7 digits long")
         main()
 
     for i in inp:
@@ -24,11 +24,11 @@ def main():
 
     for i in binary:
         if i == "1" or i=="0":
-            valido = True 
+            valid = True 
         else:
-            valido = False 
-            if valido == False:
-                print("Binário invalido. Use apenas 1 e 0 (zeros).")
+            valid = False 
+            if valid == False:
+                print("Invalid binary. Use only 1 and 0 (zeros).")
                 main()
 
     for i, j in zip(binary, operations):
